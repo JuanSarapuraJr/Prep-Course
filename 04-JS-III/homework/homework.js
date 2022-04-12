@@ -94,10 +94,10 @@ function promedioResultadosTest(resultadosTest) {
   // Tu código:
   let suma = 0;
   let promedio = 0;
-  for (let i = 0; i < resultadosTest.lenth; i++) {
-    suma = suma + resultadosTest[i];
-    promedio = (suma / resultadosTest.length);
+  for (let i = 0; i < resultadosTest.length; i++) {
+    suma = suma + resultadosTest[i]; 
   }
+  promedio = suma / resultadosTest.length;
   return promedio;
 }
 
@@ -107,7 +107,7 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
   let maximo = numeros[0];
-  for (let i = 0; i < numeros.lenth; i++) {
+  for (let i = 1; i < numeros.length; i++) {
     if (numeros[i] > maximo) {
       maximo = numeros[i];
     }
@@ -118,12 +118,12 @@ function numeroMasGrande(numeros) {
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
-  if (arguments < 1) {
+  if (arguments.length < 1) {
     return 0;
   }
-  let totalMult = 0;
+  let totalMult = 1;
   for (let i = 0; i < arguments.length; i++) {
     totalMult= totalMult * arguments[i];
   }
@@ -135,9 +135,9 @@ function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
   let total = 0;
-  for (let i= 0; i < arreglo.lenth; i++) {
+  for (let i= 0; i < arreglo.length; i++) {
     if (arreglo[i] > 18) {
-      total ++
+      total++;
     }
   }
   return total;
@@ -152,7 +152,7 @@ function diaDeLaSemana(numeroDeDia) {
   if (numeroDeDia === 1 || numeroDeDia === 7) {
     return 'Es fin de semana';
   } 
-  return 'Es dia laboral';
+  return 'Es dia Laboral';
 }
   
  
@@ -163,7 +163,7 @@ function empiezaConNueve(n) {
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
   let cadena = n.toString();
-  if (cadena.charAt(0) === 9) {
+  if (cadena.charAt(0) === '9') {
     return true;
   }
   return false;
@@ -174,14 +174,12 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí
-  for (let i = 0; i < arreglo.lenth; i++) {
-    for (let j = 0; j < arreglo.length; j++) {
-      if (arreglo[i] === arreglo[j]) {
-        return true;
-      }
+  for (let i = 0; i < arreglo.length - 1; i++) {
+    if (arreglo[i] !== arreglo[i + 1]) {
+      return false;
     }
   }
-  return false;
+  return true;
 } 
 
 
@@ -192,19 +190,19 @@ function mesesDelAño(array) {
   // Tu código:
   let nuevoArray = [];
 
-  if(array.length < 3) {
-    return 'No se encontraron los meses pedidos';
-  }
-
   for (let i = 0; i < array.length; i++) {
     if (array[i] === 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre') {
       nuevoArray.push(array[i]);
     }
   }
+
+  if(nuevoArray.length < 3) {
+    return 'No se encontraron los meses pedidos';
+  }
+
   return nuevoArray;
 
 }
-
 
 
 
@@ -230,6 +228,23 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let nuevaArray = [];
+
+  for (let i = 0; i < 10; i++) {
+    numero = numero + 2;
+      
+    if ( numero === i) {
+      break;
+    } else {
+      nuevaArray.push(numero);
+    }
+ }
+
+  if (nuevaArray.length < 10) {
+    return "Se interrumpió la ejecución";
+  } else {
+    return nuevaArray;
+  }
 }
 
 
@@ -240,6 +255,18 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let nuevaArray = [];
+
+  for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+      continue;
+    } else {
+      numero = numero + 2;
+      nuevaArray.push(numero);
+    }
+  }
+
+  return nuevaArray;
 }
 
 

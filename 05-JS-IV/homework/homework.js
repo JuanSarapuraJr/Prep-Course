@@ -145,8 +145,8 @@ function sumarLikesDeUsuario(usuario) {
   // Tu código:
   let suma = 0;
 
-  for (let post in usuario) {
-    suma = suma + usuario.posts[post].likes
+  for (let i = 0; i < usuario.posts.length; i++) {
+    suma = suma + usuario.posts[i].likes
   }
 
   return suma;
@@ -163,7 +163,9 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
   producto.calcularPrecioDescuento = function() {
+
     let precioConDescuento = producto.precio * producto.porcentajeDeDescuento;
+
     return producto.precio - precioConDescuento;
   }
 

@@ -18,12 +18,10 @@ img {
     width: 500px;
     height: 600px;
     background-color: black;
-    padding: 50px;
-    margin-left: 650px;
-    margin-top: 70px;
+    padding: 30px;
     border: 5px solid orangered;
-    display: flexbox;
-    justify-content: center;
+    display: flex;
+    margin: 0 auto;
 }
 
 #spanId {
@@ -34,14 +32,4 @@ img {
 body {
     
     background-image: url(https://todosobreelasado.com/wp-content/uploads/2019/03/le%C3%B1a-fuego-e1552605550463.jpg);
-}
-
-div {
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
-}
-
-li {
-    margin-bottom: 20px;
 }
